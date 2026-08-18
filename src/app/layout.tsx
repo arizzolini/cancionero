@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cancionero",
+  title: "PÚA",
   description:
     "Importá cifras de Cifra Club y seguí la letra mientras cantás, sin soltar la guitarra.",
-  applicationName: "Cancionero",
+  applicationName: "PÚA",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "Cancionero",
+    title: "PÚA",
     statusBarStyle: "black-translucent",
   },
 };

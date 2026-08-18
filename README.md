@@ -1,6 +1,6 @@
-# Cancionero
+# PÚA
 
-App web para tocar guitarra y cantar sin soltar el instrumento. Importás una URL concreta de [Cifra Club](https://www.cifraclub.com/), la guardás en el dispositivo y la letra intenta seguirte mientras cantás.
+PÚA es una app web para tocar guitarra y cantar sin soltar el instrumento. Importás una URL concreta de [Cifra Club](https://www.cifraclub.com/), la guardás en el dispositivo y la letra intenta seguirte mientras cantás.
 
 ## Qué hace
 
