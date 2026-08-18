@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cancionero
 
-## Getting Started
+App web para tocar guitarra y cantar sin soltar el instrumento. Importás una URL concreta de [Cifra Club](https://www.cifraclub.com/), la guardás en el dispositivo y la letra intenta seguirte mientras cantás.
 
-First, run the development server:
+## Qué hace
+
+- Importa **una canción por URL**, no rastrea ni busca en Cifra Club.
+- Guarda título, artista, tono, acordes y letra en **IndexedDB** (solo este navegador/dispositivo).
+- Busca dentro de tu biblioteca personal.
+- Sigue la letra de forma aproximada con el micrófono del navegador.
+- Si el canto o la guitarra no se entienden, sigue con **auto-scroll**, botones y órdenes de voz:
+  - `asistente siguiente`
+  - `asistente atrás`
+  - `asistente pausa`
+  - `asistente seguir`
+
+El seguimiento por canto es **orientativo**, no exacto. El reconocimiento de voz está pensado para habla, no para canto con guitarra.
+
+## Uso
+
+1. Abrí la app en **Chrome o Edge** (escritorio o celular).
+2. Pegá una URL como `https://www.cifraclub.com/los-huayra/la-noche-sin-ti/`.
+3. Tocá la canción guardada.
+4. Activá **Mic. on**, permití el micrófono y cantá cerca del celular.
+5. Ajustá tamaño de texto y velocidad de auto-scroll.
+
+Las canciones no se sincronizan entre dispositivos. Si cambiás de celular o borrás datos del navegador, hay que volver a importarlas.
+
+## Privacidad
+
+- La app **no guarda audio**.
+- En Chrome/Edge el reconocimiento de voz del navegador puede enviar el audio a su propio servicio.
+- No hay cuentas ni base de datos en el servidor: el backend solo descarga la página de Cifra Club cuando importás una URL.
+
+## Límites
+
+- El parser depende del HTML de Cifra Club. Si el sitio cambia, la importación puede fallar.
+- Cifra Club puede bloquear o limitar las descargas desde el servidor de Vercel.
+- El micrófono no funciona en Firefox de forma fiable.
+- No copies ni redistribuyas las cifras; la app conserva el enlace a la fuente original.
+
+## Desarrollo
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Despliegue en Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Subí el repo a GitHub, GitLab o Bitbucket.
+2. Importá el proyecto en [Vercel](https://vercel.com/new).
+3. Framework: Next.js. Build: `next build`.
+4. Cada push a la rama principal genera producción; las demás ramas generan preview.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No hace falta base de datos ni variables de entorno para este MVP.

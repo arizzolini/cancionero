@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Cancionero">
+  <rect width="512" height="512" rx="96" fill="#0f1113"/>
+  <circle cx="176" cy="352" r="54" fill="none" stroke="#f97316" stroke-width="28"/>
+  <circle cx="352" cy="320" r="54" fill="none" stroke="#f97316" stroke-width="28"/>
+  <path d="M230 352 V150 h122 v170" fill="none" stroke="#f97316" stroke-width="28" stroke-linejoin="round"/>
+</svg>
